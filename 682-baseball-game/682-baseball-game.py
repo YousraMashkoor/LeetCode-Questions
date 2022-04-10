@@ -6,7 +6,6 @@ class Solution:
 
 
         for op in ops:
-            
             if op == '+':
                 s = self.scores[self.size-1] + self.scores[self.size-2]
                 self.scores.append(s)
