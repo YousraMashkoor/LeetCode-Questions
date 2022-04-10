@@ -3,33 +3,23 @@ class Solution:
         self.scores = []
         self.size = 0
         self.total = 0
-        
-        def add():
-            s = self.scores[self.size-1] + self.scores[self.size-2]
-            self.scores.append(s)
-            self.total +=s
-            self.size += 1
-        
-        def double():
-            s = self.scores[self.size-1]*2
-            self.scores.append(s)
-            self.size +=1
-            self.total += s
-            
-            
-        def remove():
-            e = self.scores.pop()
-            self.size = self.size - 1
-            self.total -= e
-            
+
         for op in ops:
             
             if op == '+':
-                add()
+                s = self.scores[self.size-1] + self.scores[self.size-2]
+                self.scores.append(s)
+                self.total +=s
+                self.size += 1
             elif op == 'D':
-                double()
+                s = self.scores[self.size-1]*2
+                self.scores.append(s)
+                self.size +=1
+                self.total += s
             elif op =='C':
-                remove()
+                e = self.scores.pop()
+                self.size = self.size - 1
+                self.total -= e
             else:
                 op = int(op)
                 self.scores.append(op)
