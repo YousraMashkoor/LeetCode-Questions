@@ -4,6 +4,7 @@ class Solution:
         self.size = 0
         self.total = 0
 
+
         for op in ops:
             
             if op == '+':
