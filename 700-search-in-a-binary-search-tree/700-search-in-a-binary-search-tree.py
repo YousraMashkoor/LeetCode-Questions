@@ -7,10 +7,9 @@
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         
-        def rec(root):
-            if root:
-                if root.val == val: return root
-                elif root.val < val: return rec(root.right)
-                return rec(root.left)
-
-        return rec(root)
+        temp = root
+        while temp:
+            if temp.val == val: return temp
+            elif temp.val < val: temp = temp.right
+            else: temp = temp.left
+        return None
